@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+find . -name "*~" -exec rm -f {} 2> /dev/null \;
+find . -name "*.pyc" -exec rm -f {} 2> /dev/null \;
+find . -name "__pycache__" -exec rm -rf {} 2> /dev/null \;
+find . -name ".Dstore" -exec rm -f {} 2> /dev/null \;
