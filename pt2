@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 
-python2.7 -m pytest $@
+source scripts_config
+
+$PYTHON2_EXEC -m pytest $@

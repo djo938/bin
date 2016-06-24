@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 
-python3.4 -m pytest $@
+source scripts_config
+
+$PYTHON3_EXEC -m pytest $@

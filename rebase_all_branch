@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+source scripts_config
+cd $BAJOO_PATH || exit
+
+current_branch=`git rev-parse --abbrev-ref HEAD`
+
+for branch in `git branch -l | tr '*' ' '`;
+do
+    #ignore master
+    if [ $branch == "master" ]
+    then
+        continue
+    fi
+    
+    #ignore dev
+    if [ $branch == "dev" ]
+    then
+        continue
+    fi
+
+    git co $branch
+    
+    #stop if any error
+    git rebase origin/dev || exit
+done
+
+git co $current_branch

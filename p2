@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 
-python2.7 $@
+source scripts_config
+
+$PYTHON2_EXEC $@
