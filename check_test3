@@ -7,4 +7,4 @@
 
 export PYTHON_EXECUTABLE="python3"
 
-check_test.sh
+check_test
