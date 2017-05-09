@@ -85,7 +85,6 @@ for module_path in $(find . -iname '*.py' | sort); do
         test_file_complete=$((test_file_complete+1))
         continue
     fi
-    
     printf "%-40s %4s\n" $module_name $percentage_output
 done
 

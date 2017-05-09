@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+MD5TOOL=md5sum
+
+if [ -z `which md5sum` ]; then
+	MD5TOOL="md5 -r "
+fi
+
+chsum1="";
+while true; do
+	chsum2=`find ./pyshell -name "*.py" -exec $MD5TOOL {} \;` ;
+	if [ "$chsum1" != "$chsum2" ] ; then
+		reset
+		python -m pytest -q
+		chsum1=$chsum2
+		echo ""
+		echo "!!! THIS TOOLS WILL ITERATE EACH TIME A PYTHON FILE WILL BE UPDATED IN THE SOURCE DIRECTORY. CTRL-C TO EXIT !!!" 
+	fi
+	sleep 2
+done

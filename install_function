@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+source utils_function
+
+function install_with_apt {
+    if [ -z "`dpkg -l | grep $1`" ]; then
+        msg "$1 is not installed, try to install it"
+        sudo apt-get --assume-yes install $1
+        stop_if_failure "fail to install $1 (apt)"
+    fi 
+}
+
+function install_with_pip {
+    install_with_apt "python-pip"
+
+    if [ -z "`$python_cmd -m pip list | grep $1`" ]; then
+        msg "$1 is not installed, try to install it"
+        sudo -H $python_cmd -m pip install --upgrade pip
+        sudo -H $python_cmd -m pip install --upgrade $1
+        stop_if_failure "fail to install $1 (pip)"
+    fi 
+}
