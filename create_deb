@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 source ~/.bashrc  # update PATH to have access to pclear
-source install_function
-source utils_function
+source includes/install_function
+source includes/utils_function
 
 python_cmd=python2.7
 

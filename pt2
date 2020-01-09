@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-source scripts_config
-
-$PYTHON2_EXEC -m pytest $@

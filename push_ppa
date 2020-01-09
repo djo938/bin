@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-source install_function
-source utils_function
+source includes/install_function
+source includes/utils_function
 
 file_exists "setup.py"
 directory_exists "debian"

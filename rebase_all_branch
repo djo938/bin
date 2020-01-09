@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source scripts_config
+source includes/scripts_config
 cd $BAJOO_PATH || exit
 
 current_branch=`git rev-parse --abbrev-ref HEAD`

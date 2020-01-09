@@ -10,7 +10,7 @@ if [[ -z "$PYTHON_EXECUTABLE" ]] ; then
 fi
 echo "use of '$PYTHON_EXECUTABLE' executable"
 
-source test_function
+source includes/test_function
 
 if [[ $# -lt 1 ]]; then
     echo "expect a file path as argument"
