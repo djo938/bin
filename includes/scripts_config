@@ -1,7 +1,0 @@
-#!/usr/bin/env sh
-
-export GIT_PATH=/home/jdelvaux/development/gitcode
-export BAJOO_PATH=$GIT_PATH/client-bajoo-pour-pc
-export BAJOO_MIDDLEWARE_PATH=$GIT_PATH/middleware
-export PYTHON2_EXEC=python2.7
-export PYTHON3_EXEC=python3.5

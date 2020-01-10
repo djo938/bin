@@ -1,12 +1,11 @@
 #!/usr/bin/env bash
 
 #
-# this script try to test a python file.  it used pytest and python2
+# this script try to test a python file.  it used pytest and python3
 #
 
 if [[ -z "$PYTHON_EXECUTABLE" ]] ; then
-    echo "WARNING: no python executable defined"
-    PYTHON_EXECUTABLE="python2"
+    PYTHON_EXECUTABLE="python3"
 fi
 echo "use of '$PYTHON_EXECUTABLE' executable"
 

@@ -1,16 +1,27 @@
 #!/usr/bin/env bash
+
+#
+# This script create an infinite loop and launch every tests when any file is
+# updated.  It used pytest and python3
+#
+
 MD5TOOL=md5sum
 
 if [ -z `which md5sum` ]; then
 	MD5TOOL="md5 -r "
 fi
 
+if [[ -z "$PYTHON_EXECUTABLE" ]] ; then
+    PYTHON_EXECUTABLE="python3"
+fi
+echo "use of '$PYTHON_EXECUTABLE' executable"
+
 chsum1="";
 while true; do
 	chsum2=`find ./pyshell -name "*.py" -exec $MD5TOOL {} \;` ;
 	if [ "$chsum1" != "$chsum2" ] ; then
 		reset
-		python -m pytest -q
+		$PYTHON_EXECUTABLE -m pytest -q
 		chsum1=$chsum2
 		echo ""
 		echo "!!! THIS TOOLS WILL ITERATE EACH TIME A PYTHON FILE WILL BE UPDATED IN THE SOURCE DIRECTORY. CTRL-C TO EXIT !!!" 

@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
 if [[ -z "$PYTHON_EXECUTABLE" ]] ; then
-    echo "WARNING: no python executable defined"
-    PYTHON_EXECUTABLE="python2"
+    PYTHON_EXECUTABLE="python3"
 fi
 echo "use of '$PYTHON_EXECUTABLE' executable"
 

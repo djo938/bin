@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
 
-source includes/scripts_config
-cd $BAJOO_PATH || exit
+git_status=$(git status)
+
+if [[ "$git_status" == *"not a git repository"* ]]; then
+    echo "not a git repository"
+    exit 1
+fi
 
 current_branch=`git rev-parse --abbrev-ref HEAD`
 
