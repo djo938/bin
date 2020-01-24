@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-#
-# this script try to test a python file.  it used pytest and python2
-#
-
-export PYTHON_EXECUTABLE="python2"
-
-ptc $@
